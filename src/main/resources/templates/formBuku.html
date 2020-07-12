@@ -56,10 +56,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Peminjaman <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="#">Buku <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" th:href="${'/member'}">Member <span class="sr-only">(current)</span></a>
             </li>
         </ul>
@@ -72,23 +72,30 @@
 
 <main role="main" class="container">
 
-    <h1>Form Member</h1>
+    <h1>Form Buku</h1>
     <div class="col-lg-12">
-        <form class="form-horizontal" th:object="${member}" th:action="@{/member/create}" method="post">
+        <form class="form-horizontal" th:object="${buku}" th:action="@{/buku/create}" method="post">
             <input type="hidden" th:field="*{id}">
             <input type="hidden" th:field="*{version}">
 
             <div class="form-group">
-                <div class="col-sm-2 control-label">Nama : </div>
+                <div class="col-sm-2 control-label">Judul : </div>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{name}">
+                    <input type="text" class="form-control" th:field="*{judul}">
                 </div>
             </div>
 
             <div class="form-group">
-                <div class="col-sm-2 control-label">NIM : </div>
+                <div class="col-sm-2 control-label">Pengarang : </div>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{nim}">
+                    <input type="text" class="form-control" th:field="*{pengarang}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2 control-label">Tahun Terbit : </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{tahunTerbit}">
                 </div>
             </div>
 
